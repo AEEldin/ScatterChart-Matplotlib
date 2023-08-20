@@ -110,3 +110,39 @@ plt.scatter(xValues, yValues, c=designColors, cmap='gist_heat', s= designSizes, 
 plt.colorbar()
 plt.show()
 ```
+
+
+### Part 4: displaying more than one plot
+
+The subplot() function enables multiple plots to be displayed in the layout of the output figure; the layout is arranged in a table format with rows and columns.
+
+The subplot() function accepts three parameters to describe the layout.
+
+The first argument represents the number of rows
+The second argument represents the number of columns
+The third argument represents the position in the layout
+
+
+
+```
+import matplotlib.pyplot as plt
+
+xValues1 = [9,6,8,6,2,17,3,9,5,12,13,9,6, 2, 17, 8]
+yValues1 = [90,84,82,85,118,82,120,80,97,70,72,63,79, 80, 43, 51]  
+plt.subplot(1, 2, 1)                #the layout is 1 row, 2 columns, and this plot is in the first position
+plt.scatter(xValues1, yValues1)
+plt.title("First plot")             #a title for this plot   
+plt.ylabel("first y-axis")        
+plt.xlabel("first x-axis") 
+
+xValues2 = [6, 3, 9, 7, 11, 4, 7, 11, 4, 5, 6, 8, 11, 5, 10]
+yValues2 = [82, 91, 102, 84, 104, 93, 103, 74, 108, 96, 73, 76, 95, 82, 71]
+plt.subplot(1, 2, 2)                #the layout is 1 row, 2 columns, and this plot is in the second position
+plt.scatter(xValues2, yValues2)
+plt.title("Second plot")            #a title for this plot
+plt.ylabel("second y-axis")        
+plt.xlabel("second x-axis") 
+
+plt.suptitle("All plots")           #add one title on the collection
+plt.show()
+```
